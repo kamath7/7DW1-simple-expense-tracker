@@ -11,7 +11,7 @@ export const Transaction = ({transaction}) => {
                 {transaction.text}<span>{transaction.date}</span> <span>{sign}₹ {Math.abs(transaction.amount)}</span>
                 <button onClick={()=>{
                     let isDelete = window.confirm("Do you want to delete?");
-                    if(isDelete){deleteTransaction(transaction.id)}
+                    if(isDelete){deleteTransaction(transaction._id)}
                     return;
                     
                 }} className="delete-btn">X</button>
