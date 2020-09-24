@@ -21,6 +21,9 @@ export const AddTransaction = () => {
             date
         };
         addTransaction(newTransaction);
+        setText('');
+        setAmount(0);
+        
     }
     return (
         <div>
