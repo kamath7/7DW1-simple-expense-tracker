@@ -1,6 +1,6 @@
 {
   "name": "milk-expense-tracker",
-  "version": "0.1.0",
+  "version": "1.21.1",
   "private": true,
   "engines": {
     "node": "8.11.3",
