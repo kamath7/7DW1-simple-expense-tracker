@@ -3,8 +3,8 @@
   "version": "1.21.1",
   "private": true,
   "engines": {
-    "node": "8.11.3",
-    "yarn": "1.21.1"
+    "node": "12.18.3",
+    "yarn": "1.22.5"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -15,6 +15,7 @@
     "react": "^16.13.1",
     "react-confirm-alert": "^2.6.1",
     "react-dom": "^16.13.1",
+    "react-pagination-list": "^1.0.8",
     "react-scripts": "3.4.1"
   },
   "scripts": {

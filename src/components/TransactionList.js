@@ -1,22 +1,32 @@
-import React,{useContext, useEffect} from 'react';
+import React, { useContext, useEffect } from "react";
+import PaginationList from "react-pagination-list";
 
-import {GlobalContext} from '../context/GlobalState';
-import {Transaction} from './Transaction';
- 
+import { GlobalContext } from "../context/GlobalState";
+import { Transaction } from "./Transaction";
+
 export const TransactionList = () => {
-    const {transactions, getTransactions} = useContext(GlobalContext);
+  const { transactions, getTransactions } = useContext(GlobalContext);
 
-    useEffect(()=>{
-        getTransactions();
-    },[]);
-    return (
-        <div>
-            <h3>History</h3>
-            <ul className="list">
-                {transactions.map(transaction=>(
-                    <Transaction key={transaction.id} transaction={transaction}/>
-                ))}
-            </ul>
-        </div>
-    )
-}
+  useEffect(() => {
+    getTransactions();
+  }, []);
+  return (
+    <div>
+      <h3>History</h3>
+      <ul className="list">
+        <PaginationList
+          data={transactions.reverse()}
+          pageSize={4}
+          renderItem={(transaction, key) => (
+            <Transaction key={transaction.id} transaction={transaction} />
+          )}
+        />
+      </ul>
+    </div>
+  );
+};
+// <ul className="list">
+// {transactions.map((transaction) => (
+//   <Transaction key={transaction.id} transaction={transaction} />
+// ))}
+// </ul>
